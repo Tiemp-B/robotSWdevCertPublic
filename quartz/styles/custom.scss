@@ -1,3 +1,63 @@
 @use "./base.scss";
+@use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+// Cornell 노트 형식 (frontmatter: cssclasses: cornell-note)
+// D:\ObsidianVault\.obsidian\snippets\Cornell.css 를 Quartz DOM 구조에 맞게 이식
+article.cornell-note {
+  --cue-width: 160px;
+  --cue-gap: 24px;
+
+  position: relative;
+  padding-left: calc(var(--cue-width) + var(--cue-gap));
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: calc(var(--cue-width) + var(--cue-gap) / 2);
+    top: 0;
+    bottom: 0;
+    border-left: 1px solid var(--lightgray);
+  }
+
+  > h1 {
+    margin-left: calc(-1 * (var(--cue-width) + var(--cue-gap)));
+  }
+
+  aside,
+  .cues-header {
+    position: absolute;
+    left: 0;
+    width: var(--cue-width);
+    font-style: italic;
+    font-weight: 700;
+    line-height: var(--lineHeight);
+    color: var(--gray);
+  }
+
+  .cues-header {
+    font-style: normal;
+    color: var(--darkgray);
+  }
+
+  @media all and ($mobile) {
+    padding-left: 0;
+
+    &::before {
+      display: none;
+    }
+
+    > h1 {
+      margin-left: 0;
+    }
+
+    aside,
+    .cues-header {
+      position: static;
+      display: block;
+      width: auto;
+      margin-bottom: 0.25rem;
+    }
+  }
+}
