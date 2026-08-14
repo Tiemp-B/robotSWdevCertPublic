@@ -61,3 +61,33 @@ article.cornell-note {
     }
   }
 }
+
+// 탐색기: 폴더/파일명이 길 때 줄바꿈 대신 말줄임표(...)
+.explorer-content {
+  li > a {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.folder-container {
+  min-width: 0;
+
+  & > div {
+    min-width: 0;
+    overflow: hidden;
+    flex: 1 1 auto;
+  }
+
+  & div > a,
+  & div > button span {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
