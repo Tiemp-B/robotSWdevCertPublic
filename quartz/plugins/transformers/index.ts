@@ -1,4 +1,5 @@
 export { FrontMatter } from "./frontmatter"
+export { BoldFix } from "./boldFix"
 export { GitHubFlavoredMarkdown } from "./gfm"
 export { Citations } from "./citations"
 export { CreatedModifiedDate } from "./lastmod"
