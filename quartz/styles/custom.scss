@@ -25,20 +25,18 @@ article.cornell-note {
     margin-left: calc(-1 * (var(--cue-width) + var(--cue-gap)));
   }
 
-  aside,
-  .cues-header {
+  aside {
     position: absolute;
     left: 0;
     width: var(--cue-width);
     font-style: italic;
     font-weight: 700;
     line-height: var(--lineHeight);
-    color: var(--gray);
+    color: var(--darkgray);
   }
 
   .cues-header {
-    font-style: normal;
-    color: var(--darkgray);
+    display: none;
   }
 
   @media all and ($mobile) {
@@ -52,8 +50,7 @@ article.cornell-note {
       margin-left: 0;
     }
 
-    aside,
-    .cues-header {
+    aside {
       position: static;
       display: block;
       width: auto;
